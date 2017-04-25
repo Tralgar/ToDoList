@@ -1,0 +1,99 @@
+@import "../node_modules/foundation-sites/assets/foundation";
+
+@include foundation-everything;
+@import "styles.css";
+
+%font {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+  font-size: 12px !important;
+}
+
+body {
+  min-width: 300px;
+  max-width: 600px;
+  margin: auto;
+
+  @include breakpoint(small only) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+label[for="toggle-all"] {
+  display: none !important;
+}
+
+.todoapp {
+  margin-top: 70px;
+
+  @include breakpoint(large) {
+    margin-top: 180px;
+  }
+
+  .header {
+    h1 {
+      font-size: 3rem;
+      top: -65px;
+
+      @include breakpoint(large) {
+        font-size: 5rem;
+        top: -155px;
+      }
+    }
+  }
+
+  .main {
+    .toggle-all {
+      top: -50px;
+    }
+
+    .todo-list {
+      .view {
+        .destroy {
+          height: auto;
+          width: auto;
+          margin-bottom: 0;
+        }
+      }
+
+      .editing {
+        .edit {
+          width: 100%;
+          margin: 0;
+          padding: 10px;
+
+          @include breakpoint(medium) {
+            padding: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    padding: 10px;
+
+    .todo-count {
+      @extend %font;
+    }
+
+    .filters {
+      @extend %font;
+      left: auto;
+      right: auto;
+      padding-top: 10px;
+      @include breakpoint(medium) {
+        padding-top: 0;
+      }
+    }
+
+    .clear-completed {
+      @extend %font;
+      padding-top: 10px;
+      @include breakpoint(medium) {
+        padding-top: 0;
+        text-align: right;
+      }
+    }
+  }
+}

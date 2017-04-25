@@ -14,9 +14,9 @@
       </li>
     </ul>
   </section>
-  <footer class="footer">
-    <span class="todo-count">{{ getCountTodo() }}<strong></strong> restantes</span>
-    <ul class="filters">
+  <footer class="footer row">
+    <span class="todo-count columns large-3 medium-3 small-12 small-centered medium-uncentered">{{ getCountTodo() }}<strong></strong> restantes</span>
+    <ul class="filters columns large-6 medium-6 small-12">
       <li>
         <a [class.selected]="currentFilter === filterAll" (click)="currentFilter = filterAll" class="filterAll">Tous</a>
       </li>
@@ -27,6 +27,6 @@
         <a [class.selected]="currentFilter === filterCompleted" (click)="currentFilter = filterCompleted" class="filterCompleted">Complétés</a>
       </li>
     </ul>
-    <button class="clear-completed" *ngIf="getCountCompleted() > 0" (click)="disposeAll()">Supprimer cochées</button>
+    <button class="clear-completed columns large-3 medium-3 small-12" *ngIf="getCountCompleted() > 0" (click)="disposeAll()">Supprimer cochées</button>
   </footer>
 </section>
